@@ -17,7 +17,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <RelativeLayout
                 android:id="@+id/rl_actionbar"
@@ -38,14 +38,15 @@
                     android:textSize="16sp"
                     tools:ignore="RelativeOverlap" />
 
-                <ImageView
+                <Button
                     android:id="@+id/iv_nav_act_main"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
-                    android:contentDescription="@string/str_pair_band"
-                    android:src="@drawable/ic_pair_band" />
+                    android:background="@drawable/ic_pair_band"
+                    android:onClick="onClick" />
+
             </RelativeLayout>
 
             <RelativeLayout
