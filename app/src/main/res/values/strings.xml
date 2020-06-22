@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">Smart Mask</string>
+
+    <!--Fragment Environment-->
+    <string name="str_building_status">Mask Data</string>
+    <string name="str_dashboard">Dashboard</string>
+    <string name="str_environment_status">Environment Data</string>
+    <string name="str_air_temp">Air Temp\n℃</string>
+    <string name="str_humidity">Humidity\n%%</string>
+    <string name="str_low_bp">Low BP\nmmHg</string>
+    <string name="str_high_bp">High BP\nmmHg</string>
+    <string name="str_heart_rate">Heart Rate\nbpm</string>
+    <string name="str_skin_temp">Skin Temp\n℃</string>
+    <string name="str_oxygen">Blood Oxygen\n%</string>
+    <string name="str_breath_freq">Breath Freq\nrpm</string>
+    <string name="str_band_pairing_hint">Connecting to Band…</string>
+    <string name="str_pair_band">Pair</string>
 </resources>
