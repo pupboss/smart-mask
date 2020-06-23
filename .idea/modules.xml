@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AndroidBluetoothSerial.iml" filepath="$PROJECT_DIR$/AndroidBluetoothSerial.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Smart_Mask.iml" filepath="$PROJECT_DIR$/.idea/modules/Smart_Mask.iml" group="Smart_Mask" />
+      <module fileurl="file://$PROJECT_DIR$/androidBluetoothSerial/androidBluetoothSerial.iml" filepath="$PROJECT_DIR$/androidBluetoothSerial/androidBluetoothSerial.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="Smart Mask/app" />
+      <module fileurl="file://$PROJECT_DIR$/app/demoApplication.iml" filepath="$PROJECT_DIR$/app/demoApplication.iml" />
+    </modules>
+  </component>
+</project>

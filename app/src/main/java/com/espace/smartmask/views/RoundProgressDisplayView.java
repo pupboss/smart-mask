@@ -3,7 +3,6 @@ package com.espace.smartmask.views;
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
-import androidx.annotation.FloatRange;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -11,8 +10,10 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.gigamole.library.ArcProgressStackView;
+import android.support.annotation.FloatRange;
+
 import com.espace.smartmask.R;
+import com.gigamole.library.ArcProgressStackView;
 
 import java.util.ArrayList;
 

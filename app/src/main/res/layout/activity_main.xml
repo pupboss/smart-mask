@@ -1,226 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<android.support.v4.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_swiperefresh"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_width="match_parent" >
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:orientation="vertical">
 
-        <LinearLayout
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:text="@string/paired_devices"
+            android:textSize="@dimen/title"
+            android:layout_marginBottom="@dimen/margin"
+            android:layout_marginTop="@dimen/margin"
+            android:layout_marginLeft="@dimen/margin"
+            android:layout_marginRight="@dimen/margin" />
 
-            <RelativeLayout
-                android:id="@+id/rl_actionbar"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:background="@color/white"
-                android:elevation="4dp"
-                android:paddingLeft="12dp"
-                android:paddingRight="12dp">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/main_devices"
+            android:scrollbars="vertical"
+            android:fadeScrollbars="true"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
 
-                <TextView
-                    android:id="@+id/tv_title_act_main"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:text="@string/str_dashboard"
-                    android:textColor="@color/textGray"
-                    android:textSize="16sp"
-                    tools:ignore="RelativeOverlap" />
+    </LinearLayout>
 
-                <Button
-                    android:id="@+id/iv_nav_act_main"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:background="@drawable/ic_pair_band"
-                    android:onClick="onClick" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/rl_card_2"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="37dp">
-
-                <LinearLayout
-                    android:id="@+id/ll_card_2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="16dp"
-                    android:background="@drawable/shape_roundedrect_solid_white_20dp"
-                    android:elevation="4dp"
-                    android:orientation="vertical"
-                    android:padding="24dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:minHeight="120dp"
-                        android:orientation="horizontal">
-
-                        <com.espace.smartmask.views.RoundProgressDisplayView
-                            android:id="@+id/progressbar_heartrate_frag_env"
-                            android:layout_width="0dp"
-                            android:layout_height="120dp"
-                            android:layout_weight="1"
-                            app:text="0" />
-
-                        <com.espace.smartmask.views.RoundProgressDisplayView
-                            android:id="@+id/progressbar_skintemp_frag_env"
-                            android:layout_width="0dp"
-                            android:layout_height="120dp"
-                            android:layout_marginStart="24dp"
-                            android:layout_weight="1"
-                            app:text="0" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/tv_heartrate_frag_env"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="@string/str_heart_rate" />
-
-                        <TextView
-                            android:id="@+id/tv_skintemp_frag_env"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="24dp"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="@string/str_skin_temp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:minHeight="120dp"
-                        android:orientation="horizontal">
-
-                        <com.espace.smartmask.views.RoundProgressDisplayView
-                            android:id="@+id/progressbar_low_frag_env"
-                            android:layout_width="0dp"
-                            android:layout_height="120dp"
-                            android:layout_weight="1"
-                            app:text="0" />
-
-                        <com.espace.smartmask.views.RoundProgressDisplayView
-                            android:id="@+id/progressbar_high_frag_env"
-                            android:layout_width="0dp"
-                            android:layout_height="120dp"
-                            android:layout_marginStart="24dp"
-                            android:layout_weight="1"
-                            app:text="0" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/tv_low_frag_env"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="@string/str_low_bp" />
-
-                        <TextView
-                            android:id="@+id/tv_high_frag_env"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="24dp"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="@string/str_high_bp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:minHeight="120dp"
-                        android:orientation="horizontal">
-
-                        <com.espace.smartmask.views.RoundProgressDisplayView
-                            android:id="@+id/progressbar_oxygen_frag_env"
-                            android:layout_width="0dp"
-                            android:layout_height="120dp"
-                            android:layout_weight="1"
-                            app:text="0" />
-
-                        <com.espace.smartmask.views.RoundProgressDisplayView
-                            android:id="@+id/progressbar_freq_frag_env"
-                            android:layout_width="0dp"
-                            android:layout_height="120dp"
-                            android:layout_marginStart="24dp"
-                            android:layout_weight="1"
-                            app:text="0" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/tv_oxygen_frag_env"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="@string/str_oxygen" />
-
-                        <TextView
-                            android:id="@+id/tv_freq_frag_env"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="24dp"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="@string/str_breath_freq" />
-                    </LinearLayout>
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="32dp"
-                    android:layout_alignTop="@+id/ll_card_2"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="-16dp"
-                    android:background="@drawable/shape_roundedrect_solid_theme_20dp"
-                    android:elevation="4dp"
-                    android:gravity="center"
-                    android:paddingLeft="24dp"
-                    android:paddingRight="24dp"
-                    android:text="@string/str_building_status"
-                    android:textColor="@color/white" />
-
-            </RelativeLayout>
-
-        </LinearLayout>
-    </ScrollView>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</android.support.v4.widget.SwipeRefreshLayout>
