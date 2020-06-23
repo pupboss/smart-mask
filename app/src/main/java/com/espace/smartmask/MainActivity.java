@@ -72,15 +72,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                // If the back button was pressed, handle it the normal way
-                onBackPressed();
-                return true;
-
-            default:
-                return super.onOptionsItemSelected(item);
+        if (item.getItemId() == android.R.id.home) {
+            // If the back button was pressed, handle it the normal way
+            onBackPressed();
+            return true;
         }
+        return super.onOptionsItemSelected(item);
     }
 
     // Called when the user presses the back button

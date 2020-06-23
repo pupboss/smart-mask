@@ -6,13 +6,17 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.MenuItem;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
+
+import com.espace.smartmask.views.RoundProgressDisplayView;
 
 public class CommunicateActivity extends AppCompatActivity {
 
     private TextView connectionText;
     private Button connectButton;
+
+    private RoundProgressDisplayView mHeartRateView, mSkinTempView,
+            mLowBloodPressureView, mHighBloodPressureView, mBloodOxygenView;
 
     private CommunicateViewModel viewModel;
 
@@ -37,8 +41,13 @@ public class CommunicateActivity extends AppCompatActivity {
 
         // Setup our Views
         connectionText = findViewById(R.id.communicate_connection_text);
-//        messagesView = findViewById(R.id.communicate_messages);
         connectButton = findViewById(R.id.communicate_connect);
+
+        mHeartRateView = findViewById(R.id.progressbar_heartrate_frag_env);
+        mSkinTempView = findViewById(R.id.progressbar_skintemp_frag_env);
+        mLowBloodPressureView = findViewById(R.id.progressbar_low_frag_env);
+        mHighBloodPressureView = findViewById(R.id.progressbar_high_frag_env);
+        mBloodOxygenView = findViewById(R.id.progressbar_oxygen_frag_env);
 
         // Start observing the data sent to us by the ViewModel
         viewModel.getConnectionStatus().observe(this, this::onConnectionStatus);
@@ -47,7 +56,22 @@ public class CommunicateActivity extends AppCompatActivity {
             if (TextUtils.isEmpty(message)) {
                 message = getString(R.string.no_messages);
             }
-//            messagesView.setText(message);
+            String[] multipleParams = message.split(",");
+
+            String heartRate = multipleParams[0].replace("HR:", "");
+            String oxygen = multipleParams[1].replace("SpO2:", "");
+            String skinTemp = multipleParams[2].replace("Temp:", "").replace("C", "");
+
+            String hlBlood = multipleParams[3].replace("H/L:", "").replace("mmHg\r\n", "");
+            String[] hl = hlBlood.split("/");
+            String high = hl[0];
+            String low = hl[1];
+
+            mHeartRateView.setValues(heartRate, (Integer.parseInt(heartRate) / 150.0f));
+            mSkinTempView.setValues(skinTemp, (Float.parseFloat(skinTemp) / 40.0f));
+            mLowBloodPressureView.setValues(low, (Integer.parseInt(low) / 90.0f));
+            mHighBloodPressureView.setValues(high, (Integer.parseInt(high) / 140.0f));
+            mBloodOxygenView.setValues(oxygen, (Integer.parseInt(oxygen) / 100.0f));
         });
     }
 

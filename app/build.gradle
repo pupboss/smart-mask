@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 30
     defaultConfig {
         applicationId "com.espace.smartmask"
         minSdkVersion 21
@@ -20,13 +20,14 @@ android {
         targetCompatibility 1.8
         sourceCompatibility 1.8
     }
+    buildToolsVersion '30.0.0'
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-    implementation 'com.android.support:design:27.1.1'
+    implementation 'com.android.support:design:28.0.0'
 
     implementation 'com.github.gigamole.arcprogressstackview:library:1.0.3'
 

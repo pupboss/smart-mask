@@ -38,9 +38,6 @@ public class CommunicateViewModel extends AndroidViewModel {
     // The message in the message box that the activity sees
     private MutableLiveData<String> messageData = new MutableLiveData<>();
 
-    // Our modifiable record of the conversation
-    private StringBuilder messages = new StringBuilder();
-
     // Our configuration
     private String deviceName;
     private String mac;
@@ -128,9 +125,6 @@ public class CommunicateViewModel extends AndroidViewModel {
             this.deviceInterface.setListeners(this::onMessageReceived, this::onMessageSent, t -> toast(R.string.message_send_error));
             // Tell the user we are connected.
             toast(R.string.connected);
-            // Reset the conversation
-            messages = new StringBuilder();
-            messagesData.postValue(messages.toString());
         } else {
             // deviceInterface was null, so the connection failed
             toast(R.string.connection_failed);
@@ -140,17 +134,12 @@ public class CommunicateViewModel extends AndroidViewModel {
 
     // Adds a received message to the conversation
     private void onMessageReceived(String message) {
-        messages.append(deviceName).append(": ").append(message).append('\n');
-        messagesData.postValue(messages.toString());
+        messagesData.postValue(message);
     }
 
     // Adds a sent message to the conversation
     private void onMessageSent(String message) {
         // Add it to the conversation
-        messages.append(getApplication().getString(R.string.you_sent)).append(": ").append(message).append('\n');
-        messagesData.postValue(messages.toString());
-        // Reset the message box
-        messageData.postValue("");
     }
 
     // Send a message
