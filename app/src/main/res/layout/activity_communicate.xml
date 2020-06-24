@@ -75,18 +75,20 @@
 
                         <com.espace.smartmask.views.RoundProgressDisplayView
                             android:id="@+id/progressbar_heartrate_frag_env"
-                            app:text="0"
                             android:layout_width="0dp"
                             android:layout_height="120dp"
-                            android:layout_weight="1" />
+                            android:layout_weight="1"
+                            app:text="88"
+                            app:textSize="10sp" />
 
                         <com.espace.smartmask.views.RoundProgressDisplayView
                             android:id="@+id/progressbar_skintemp_frag_env"
-                            app:text="0"
                             android:layout_width="0dp"
                             android:layout_height="120dp"
                             android:layout_marginStart="24dp"
-                            android:layout_weight="1" />
+                            android:layout_weight="1"
+                            app:text="34.1"
+                            app:textSize="8sp" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -121,18 +123,20 @@
 
                         <com.espace.smartmask.views.RoundProgressDisplayView
                             android:id="@+id/progressbar_low_frag_env"
-                            app:text="0"
                             android:layout_width="0dp"
                             android:layout_height="120dp"
-                            android:layout_weight="1" />
+                            android:layout_weight="1"
+                            app:text="88"
+                            app:textSize="10sp" />
 
                         <com.espace.smartmask.views.RoundProgressDisplayView
                             android:id="@+id/progressbar_high_frag_env"
-                            app:text="0"
                             android:layout_width="0dp"
                             android:layout_height="120dp"
                             android:layout_marginStart="24dp"
-                            android:layout_weight="1" />
+                            android:layout_weight="1"
+                            app:text="130"
+                            app:textSize="10sp" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -167,10 +171,11 @@
 
                         <com.espace.smartmask.views.RoundProgressDisplayView
                             android:id="@+id/progressbar_oxygen_frag_env"
-                            app:text="0"
                             android:layout_width="0dp"
                             android:layout_height="120dp"
-                            android:layout_weight="1" />
+                            android:layout_weight="1"
+                            app:text="100"
+                            app:textSize="10sp" />
 
                     </LinearLayout>
 

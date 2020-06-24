@@ -53,25 +53,25 @@ public class CommunicateActivity extends AppCompatActivity {
         viewModel.getConnectionStatus().observe(this, this::onConnectionStatus);
         viewModel.getDeviceName().observe(this, name -> setTitle(getString(R.string.device_name_format, name)));
         viewModel.getMessages().observe(this, message -> {
-            if (TextUtils.isEmpty(message)) {
+            if (message == null || !message.startsWith("HR")) {
                 message = getString(R.string.no_messages);
             }
             String[] multipleParams = message.split(",");
 
-            String heartRate = multipleParams[0].replace("HR:", "");
-            String oxygen = multipleParams[1].replace("SpO2:", "");
+            int heartRate = Integer.parseInt(multipleParams[0].replace("HR:", ""));
+            int oxygen = Integer.parseInt(multipleParams[1].replace("SpO2:", ""));
             String skinTemp = multipleParams[2].replace("Temp:", "").replace("C", "");
 
             String hlBlood = multipleParams[3].replace("H/L:", "").replace("mmHg\r\n", "");
             String[] hl = hlBlood.split("/");
-            String high = hl[0];
-            String low = hl[1];
+            int high = Integer.parseInt(hl[0]);
+            int low = Integer.parseInt(hl[1]);
 
-            mHeartRateView.setValues(heartRate, (Integer.parseInt(heartRate) / 150.0f));
+            mHeartRateView.setValues(Integer.toString(heartRate), (heartRate / 150.0f));
             mSkinTempView.setValues(skinTemp, (Float.parseFloat(skinTemp) / 40.0f));
-            mLowBloodPressureView.setValues(low, (Integer.parseInt(low) / 90.0f));
-            mHighBloodPressureView.setValues(high, (Integer.parseInt(high) / 140.0f));
-            mBloodOxygenView.setValues(oxygen, (Integer.parseInt(oxygen) / 100.0f));
+            mLowBloodPressureView.setValues(Integer.toString(low), (low / 90.0f));
+            mHighBloodPressureView.setValues(Integer.toString(high), (high / 140.0f));
+            mBloodOxygenView.setValues(Integer.toString(oxygen), (oxygen / 100.0f));
         });
     }
 
