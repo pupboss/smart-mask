@@ -4,7 +4,7 @@
     <string name="message">Message</string>
     <string name="send">Send</string>
     <string name="paired_devices">Paired devices:</string>
-    <string name="no_messages">HR:000,SpO2:000,Temp:00.0C,H/L:000/000mmHg\r\n</string>
+    <string name="no_messages">HR:000,SpO2:000,Temp:00.0C,H/L:000/000mmHg</string>
     <string name="no_bluetooth">Bluetooth not available.</string>
     <string name="device_name_format">Device: %1$s</string>
     <string name="status_connecting">Status: Connecting</string>

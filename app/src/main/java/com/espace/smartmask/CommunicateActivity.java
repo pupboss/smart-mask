@@ -4,6 +4,7 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
@@ -62,7 +63,7 @@ public class CommunicateActivity extends AppCompatActivity {
             int oxygen = Integer.parseInt(multipleParams[1].replace("SpO2:", ""));
             String skinTemp = multipleParams[2].replace("Temp:", "").replace("C", "");
 
-            String hlBlood = multipleParams[3].replace("H/L:", "").replace("mmHg\r\n", "");
+            String hlBlood = multipleParams[3].replace("H/L:", "").replace("mmHg", "");
             String[] hl = hlBlood.split("/");
             int high = Integer.parseInt(hl[0]);
             int low = Integer.parseInt(hl[1]);
