@@ -68,11 +68,11 @@ public class CommunicateActivity extends AppCompatActivity {
             int high = Integer.parseInt(hl[0]);
             int low = Integer.parseInt(hl[1]);
 
-            mHeartRateView.setValues(Integer.toString(heartRate), (heartRate / 150.0f));
-            mSkinTempView.setValues(skinTemp, (Float.parseFloat(skinTemp) / 40.0f));
-            mLowBloodPressureView.setValues(Integer.toString(low), (low / 90.0f));
-            mHighBloodPressureView.setValues(Integer.toString(high), (high / 140.0f));
-            mBloodOxygenView.setValues(Integer.toString(oxygen), (oxygen / 100.0f));
+            mHeartRateView.setValues(Integer.toString(heartRate), (heartRate / 1.5f));
+            mSkinTempView.setValues(skinTemp, (Float.parseFloat(skinTemp) / 0.4f));
+            mLowBloodPressureView.setValues(Integer.toString(low), (low / 0.9f));
+            mHighBloodPressureView.setValues(Integer.toString(high), (high / 1.4f));
+            mBloodOxygenView.setValues(Integer.toString(oxygen), (oxygen / 1.0f));
         });
     }
 

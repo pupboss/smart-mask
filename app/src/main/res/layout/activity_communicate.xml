@@ -78,7 +78,8 @@
                             android:layout_width="0dp"
                             android:layout_height="120dp"
                             android:layout_weight="1"
-                            app:text="88"
+                            app:progressBarProgress="42"
+                            app:text="64"
                             app:textSize="10sp" />
 
                         <com.espace.smartmask.views.RoundProgressDisplayView
@@ -87,6 +88,7 @@
                             android:layout_height="120dp"
                             android:layout_marginStart="24dp"
                             android:layout_weight="1"
+                            app:progressBarProgress="85"
                             app:text="34.1"
                             app:textSize="8sp" />
                     </LinearLayout>
@@ -126,7 +128,8 @@
                             android:layout_width="0dp"
                             android:layout_height="120dp"
                             android:layout_weight="1"
-                            app:text="88"
+                            app:progressBarProgress="80"
+                            app:text="72"
                             app:textSize="10sp" />
 
                         <com.espace.smartmask.views.RoundProgressDisplayView
@@ -135,7 +138,8 @@
                             android:layout_height="120dp"
                             android:layout_marginStart="24dp"
                             android:layout_weight="1"
-                            app:text="130"
+                            app:progressBarProgress="78"
+                            app:text="109"
                             app:textSize="10sp" />
                     </LinearLayout>
 
@@ -174,7 +178,8 @@
                             android:layout_width="0dp"
                             android:layout_height="120dp"
                             android:layout_weight="1"
-                            app:text="100"
+                            app:progressBarProgress="98"
+                            app:text="98"
                             app:textSize="10sp" />
 
                     </LinearLayout>
