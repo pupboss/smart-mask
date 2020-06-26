@@ -61,7 +61,7 @@ public class CommunicateActivity extends AppCompatActivity {
 
             int heartRate = Integer.parseInt(multipleParams[0].replace("HR:", ""));
             int oxygen = Integer.parseInt(multipleParams[1].replace("SpO2:", ""));
-            String skinTemp = multipleParams[2].replace("Temp:", "").replace("C", "");
+            float skinTemp = Float.parseFloat(multipleParams[2].replace("Temp:", "").replace("C", "")) + 2.9f;
 
             String hlBlood = multipleParams[3].replace("H/L:", "").replace("mmHg", "");
             String[] hl = hlBlood.split("/");
@@ -69,7 +69,7 @@ public class CommunicateActivity extends AppCompatActivity {
             int low = Integer.parseInt(hl[1]);
 
             mHeartRateView.setValues(Integer.toString(heartRate), (heartRate / 1.5f));
-            mSkinTempView.setValues(skinTemp, (Float.parseFloat(skinTemp) / 0.4f));
+            mSkinTempView.setValues(Float.toString(skinTemp), (skinTemp / 0.4f));
             mLowBloodPressureView.setValues(Integer.toString(low), (low / 0.9f));
             mHighBloodPressureView.setValues(Integer.toString(high), (high / 1.4f));
             mBloodOxygenView.setValues(Integer.toString(oxygen), (oxygen / 1.0f));
